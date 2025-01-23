@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Assignment 1: Painting</title>
+    <style>
+        body {
+            text-align: center;
+            padding-top: 20px;
+        }
+        #imageContainer {
+            margin-top: 20px
+        }
+        img {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body onload="main()">
+    <canvas id="webgl" width="400" height="400">
+        Please use a browser that supports "canvas"
+    </canvas>
+    <div style="text-align: center; margin-top: 20px;">
+        <p>
+            For some creativity, I implemented the dynamic color feature that changes the color of drawn shapes based on the cursor's distance from the center of the canvas.
+            As you move the cursor, the color intensity adjusts dynamically, enhancing the visual and interactive experience.
+        </p>
+    </div>
+    <div>
+        <button type="button" id="green">Green</button>
+        <button type="button" id="red">Red</button>
+        <button type="button" id="clearButton">Clear</button>
+    </div>
+    <div>
+        <button type="button" id="pointButton">Point</button>
+        <button type="button" id="triangleButton">Triangle</button>
+        <button type="button" id="circleButton">Circle</button>
+        <button type="button" id="toggleColorChange">Dynamic Color</button>
+    </div>
+
+    <div>
+        Red <input type="range" min="0" max="100" value="100" class="slider" id="redSlide"><br>
+        Green <input type="range" min="0" max="100" value="100" class="slider" id="greenSlide"><br>
+        Blue <input type="range" min="0" max="100" value="100" class="slider" id="blueSlide"><br>
+        Size <input type="range" id="sizeSlide" min="15" max="40" value="20" class="slider"><br>
+        Number of Segments <input type="range" id="segmentSlide" min="3" max="100" value="30" class="slider">
+    </div>
+
+    <button type="button" id="drawImage">Draw Reference Image</button>
+
+    <div id="imageContainer">
+        <img src="../lib/image.jpeg" alt="Reference Image">
+        <p>Reference Image</p>
+    </div>
+
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="Point.js"></script>
+    <script src="Triangle.js"></script>
+    <script src="Circle.js"></script>
+    <script src="asgn1.js"></script>
+</body>
+</html>
